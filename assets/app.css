@@ -37,3 +37,14 @@ form { max-width: 720px; }
 .student-details dt { color: var(--muted); font-size: 13px; margin-bottom: 6px; }
 .student-details dd { margin: 0; font-weight: 600; word-break: break-word; }
 @media (max-width: 640px) { .form-grid, .student-details { grid-template-columns: 1fr; } .page-heading { align-items: flex-start; flex-direction: column; } }
+.filters { display: flex; align-items: flex-end; gap: 12px; margin-bottom: 16px; max-width: none; }
+.actions form { max-width: none; }
+.filter-field { display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.filter-field label { font-size: 13px; font-weight: 700; }
+.filter-field input, .filter-field select { height: 40px; border: 1px solid var(--border); border-radius: 6px; padding: 8px 10px; font: inherit; }
+.results-summary { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+.pagination { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px; margin-top: 20px; }
+.page-link { min-width: 38px; height: 38px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--border); border-radius: 6px; color: var(--text); background: #fff; text-decoration: none; }
+.page-link.active { color: #fff; background: var(--primary); border-color: var(--primary); }
+.pagination .disabled { opacity: .45; pointer-events: none; }
+@media (max-width: 640px) { .filters { align-items: stretch; flex-direction: column; } }
