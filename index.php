@@ -52,8 +52,10 @@ if (!empty($databaseError)):
                             <td><?= e($date->format('d M Y')) ?></td>
                             <td>
                                 <div class="actions">
+                                    <a class="btn btn-secondary" href="/swd/05-student-records/show.php?id=<?= (int) $student['id'] ?>">View</a>
                                     <a class="btn btn-secondary" href="/swd/05-student-records/edit.php?id=<?= (int) $student['id'] ?>">Edit</a>
-                                    <form method="post" action="/swd/05-student-records/delete.php" onsubmit="return confirm('Delete this student?');">
+                                    <form method="post" action="/swd/05-student-records/delete.php" onsubmit='return confirm(<?= json_encode('Delete ' . $student['first_name'] . ' ' . $student['last_name'] . '?', JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) ?>);'>
+                                        <input type="hidden" name="csrf_token" value="<?= e(csrfToken()) ?>">
                                         <input type="hidden" name="id" value="<?= (int) $student['id'] ?>">
                                         <button class="btn btn-danger" type="submit">Delete</button>
                                     </form>
