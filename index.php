@@ -24,7 +24,7 @@ if (!empty($databaseError)):
     <section class="card">
         <div class="page-heading">
             <h1>Students</h1>
-            <a class="btn" href="/swd/05-student-records/add.php">Add student</a>
+            <a class="btn" href="/swd/05-student-records/create.php">Add student</a>
         </div>
         <div class="table-wrap">
             <table>
